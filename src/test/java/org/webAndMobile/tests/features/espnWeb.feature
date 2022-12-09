@@ -13,5 +13,5 @@ Feature: ESPN web navigation
     And User logs out from session
 
     Examples:
-      | firstname | lastname   | email                  | password   |
-      | "Joan"   | "Zorovich"  | "prueba123@prueba.com" | "12345678" |
+      | firstname | lastname   | email                      | password   |
+      | "Joan"   | "Zorovich"  | "prueba1234@prueba123.com" | "P12345678#" |

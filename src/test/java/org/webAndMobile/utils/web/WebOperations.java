@@ -74,6 +74,24 @@ public class WebOperations {
         wait.until(ExpectedConditions.presenceOfElementLocated(By.cssSelector(locator)));
     }
 
+    public void scrollDown(){
+        action
+                .scrollByAmount(0, 10000)
+                .perform();
+    }
+
+    public Boolean isElementDisplayed(WebElement element, Integer intWait) {
+        try {
+            getWait(intWait).until(ExpectedConditions.visibilityOf(element));
+            return element.isDisplayed();
+        } catch (Exception ex) {
+            return false;
+        }
+    }
+
+    private WebDriverWait getWait(Integer intWait) {
+        return new WebDriverWait(driver, Duration.ofSeconds(intWait));
+    }
 
 }
 

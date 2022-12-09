@@ -23,6 +23,18 @@ public class HomePage extends BasePage {
     private WebElement iframeUserForm;
     @FindBy(id = "logo")
     private WebElement espnFormLogo;
+    @FindBy(css = "h2#Title")
+    private WebElement signUpTitle;
+    @FindBy(id = "InputFirstName")
+    private WebElement firstNameInput;
+    @FindBy(id = "InputLastName")
+    private WebElement lastNameInput;
+    @FindBy(id = "InputEmail")
+    private WebElement emailInput;
+    @FindBy(id = "password-new")
+    private WebElement passwordInput;
+    @FindBy(id = "close")
+    private WebElement closeButton;
     @FindBy(id = "InputLoginValue")
     private WebElement inputUser;
     @FindBy(id = "InputPassword")
@@ -58,7 +70,6 @@ public class HomePage extends BasePage {
     public HomePage(WebDriver driver) {
         super(driver);
     }
-
 
     public boolean isMainContentDisplayed(){
        return mainContent.isDisplayed();
@@ -96,6 +107,34 @@ public class HomePage extends BasePage {
     public boolean isSubmitButtonDisplayed(){
         return submitButton.isDisplayed();
     }
+
+    public boolean isSignUpTitleDisplayed(){
+        return signUpTitle.isDisplayed();
+    }
+    public boolean isFirstNameInputDisplayed(){
+        return firstNameInput.isDisplayed();
+    }
+    public boolean isLastNameInputDisplayed(){
+        return lastNameInput.isDisplayed();
+    }
+    public boolean isEmailInputDisplayed(){
+        return emailInput.isDisplayed();
+    }
+    public boolean isPasswordInputDisplayed(){
+        return passwordInput.isDisplayed();
+    }
+
+    public boolean isCloseButtonDisplayed(){
+        return closeButton.isDisplayed();
+    }
+
+
+    public void typeSignUpInfo(String firstName, String lastName, String email, String password){
+        super.typeOnInput(firstNameInput, firstName);
+        super.typeOnInput(lastNameInput, lastName);
+        super.typeOnInput(emailInput, email);
+        super.typeOnInput(passwordInput, password);
+    }
     public void typeLoginInfo(String email, String password){
         super.typeOnInput(inputUser, email);
         super.typeOnInput(inputPassword, password);
@@ -128,6 +167,10 @@ public class HomePage extends BasePage {
         switchToIframeForm();
         typeLoginInfo(email, password);
     }
+
+
+
+
     public boolean isESPNProfileLinkDisplayed(){
         placeMouseOverProfileLogo();
         return ESPNProfile.isDisplayed();
@@ -142,6 +185,10 @@ public class HomePage extends BasePage {
         clickAnElement(deleteAccountLink);
     }
 
+    public void clickOnSubmitButton(){
+        super.isElementDisplayed(submitButton,3);
+        super.clickAnElement(submitButton);
+    }
 
     public void clickOnDeleteAccountButton(){
         super.waitForVisibility(submitButton);
