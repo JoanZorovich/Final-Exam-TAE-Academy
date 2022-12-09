@@ -14,6 +14,9 @@ public class WebSteps {
     private HomePage home;
     private WatchPage watchPage;
 
+    private final String USER_NAME = "Joan!";
+    private final String WELCOME_MESSAGE = "Welcome!";
+
     @Given("User is on the ESPN home page")
     public void userIsOnTheESPNHomePage() {
         home = new HomePage(WebHooks.getDriver());
@@ -87,8 +90,13 @@ public class WebSteps {
     @And("User logs out from session")
     public void userLogsOutFromSession() {
         Reporter.info("----Validate log out----");
-        Reporter.info("Each card in the first carousel has a title");
-        Assert.assertTrue(watchPage.getCardsTitle(), "Not all cards have a title");
+        Reporter.info("Validate if there is a logged in user");
+        Assert.assertEquals(home.getUserName(),USER_NAME);
+        home.logOutSession();
+        Reporter.info("Log Out Link is displayed");
+        Assert.assertTrue(home.isLogOutLinkDisplayed(), "Log Out Link is not displayed");
+        Reporter.info("The user has logged out successfully");
+        Assert.assertEquals(home.getWelcomeMessage(),WELCOME_MESSAGE);
     }
 
 }
