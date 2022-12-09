@@ -169,8 +169,6 @@ public class HomePage extends BasePage {
     }
 
 
-
-
     public boolean isESPNProfileLinkDisplayed(){
         placeMouseOverProfileLogo();
         return ESPNProfile.isDisplayed();
@@ -222,7 +220,7 @@ public class HomePage extends BasePage {
     public boolean isPromoBannerDisplayed() {
         boolean banner = false;
         try {
-            super.waitForElementPresence(".promo-banner-container iframe", Duration.ofSeconds(5));
+            super.waitForElementPresence(".promo-banner-container iframe", 5);
         } catch (TimeoutException e) {
             banner = true;
         }

@@ -1,4 +1,4 @@
-package org.webAndMobile.tests.stepsDefinitions;
+package org.webAndMobile.tests.stepsDefinitions.web;
 
 import io.cucumber.java.After;
 import io.cucumber.java.Before;

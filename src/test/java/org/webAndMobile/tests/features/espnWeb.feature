@@ -14,4 +14,4 @@ Feature: ESPN web navigation
 
     Examples:
       | firstname | lastname   | email                      | password   |
-      | "Joan"   | "Zorovich"  | "prueba1234@prueba123.com" | "P12345678#" |
+      | "Joan"   | "Zorovich"  | "prueba1234@prueba130.com" | "P12345678#" |
