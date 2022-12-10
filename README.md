@@ -4,7 +4,7 @@ Create a hybrid (web / mobile) automation framework following the architectural 
 regarding web and mobile:
 
 - Web Module:
-Based on the ESPN webpage Web Browser URL: https://www.espnqa.com/?src=com&_adblock=true&espn=cloud. Create automated test cases for the
+Based on the ESPN webpage Web Browser URL: https://www.espnqa.com/?src=com&_adblock=true&espn=cloud. Create automated test case for the
 following scenario.
 
 1. Sign Up
