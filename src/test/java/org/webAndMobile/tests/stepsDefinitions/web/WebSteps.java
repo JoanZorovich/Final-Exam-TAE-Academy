@@ -18,6 +18,8 @@ public class WebSteps {
     private final String USER_NAME = "Joan!";
     private final String WELCOME_MESSAGE = "Welcome!";
 
+    private static String EMAIL;
+
     @Given("User is on the ESPN home page")
     public void userIsOnTheESPNHomePage() {
         home = new HomePage(WebHooks.getDriver());
@@ -27,12 +29,13 @@ public class WebSteps {
         Assert.assertTrue(home.isNavbarDisplayed(), "Navbar is not displayed");
     }
 
-    @When("User sign up successfully {string} {string} {string} {string}")
-    public void userSignUpSuccessfully(String firstName, String lastName, String email, String password) {
+    @When("User goes to the login form to access to sign-up button")
+    public void userGoesToTheLoginFormToAccessToSignUpButton() {
         home.placeMouseOverProfileLogo();
         Reporter.info("Validate profile Menu is displayed");
         Assert.assertTrue(home.isMainContentDisplayed(), "profile Menu is not displayed");
         home.clickOnLoginLink();
+
         home.switchToIframeForm();
         Reporter.info("----Validate log in modal is present----");
         Reporter.info("ESPN logo is displayed");
@@ -43,6 +46,9 @@ public class WebSteps {
         Assert.assertTrue(home.isSignUpButtonDisplayed(), "Sign Up Button is not displayed");
         home.clickSignUpButton();
 
+    }
+    @And("Fill the sign up form successfully {string} {string} {string}")
+    public void fillTheSignUpFormSuccessfully(String firstName, String lastName, String password) {
         Reporter.info("----Validate Sign Up modal is present----");
         Reporter.info("Sign Up title is displayed");
         Assert.assertTrue(home.isSignUpTitleDisplayed(), "Sign Up title is not displayed");
@@ -58,11 +64,10 @@ public class WebSteps {
         Assert.assertTrue(home.isSubmitButtonDisplayed(), "Sign Up Button is not displayed");
         Reporter.info("Close Button is displayed");
         Assert.assertTrue(home.isCloseButtonDisplayed(), "Close Button is not displayed");
-
-        home.typeSignUpInfo(firstName,lastName,email,password);
+        EMAIL = home.getRandomEmail();
+        home.typeSignUpInfo(firstName,lastName,EMAIL,password);
         home.clickOnSubmitButton();
     }
-
     @Then("Watch page should displays different carousels")
     public void watchPageShouldDisplaysDifferentCarousels() {
         Reporter.info("----Validate Watch Page Navigation----");
@@ -80,13 +85,11 @@ public class WebSteps {
         Assert.assertTrue(watchPage.isCloseLightBoxButton(), "Close Light Box is not displayed");
         watchPage.clickOnCloseLightBoxButton();
     }
-
     @And("User returns to home page")
     public void userReturnsToHomePage() {
         Reporter.info("----Return to home page from watch page----");
         watchPage.backToHomePage();
     }
-
     @And("User logs out from session")
     public void userLogsOutFromSession() {
         Reporter.info("----Validate log out----");
@@ -98,5 +101,13 @@ public class WebSteps {
         Reporter.info("The user has logged out successfully");
         Assert.assertEquals(home.getWelcomeMessage(),WELCOME_MESSAGE);
     }
-
 }
+
+
+
+
+
+
+
+
+
