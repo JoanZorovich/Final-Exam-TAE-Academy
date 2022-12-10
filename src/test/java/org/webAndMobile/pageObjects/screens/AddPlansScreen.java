@@ -53,8 +53,8 @@ public class AddPlansScreen extends BaseScreen {
     }
 
     /**
+     * Display "Check Dining Availability Screen".
      * @author Joan.Zorovich
-     * @return Display "Check Dining Availability Screen".
      */
     public void clickOnReserveDiningButton(){
         click(reserveDiningButton);

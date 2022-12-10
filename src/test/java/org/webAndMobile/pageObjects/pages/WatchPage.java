@@ -7,7 +7,9 @@ import org.openqa.selenium.support.FindBy;
 
 import java.util.ArrayList;
 import java.util.List;
-
+/**
+ * Class that contains all the web elements and methods of the Watch page
+ */
 public class WatchPage extends BasePage{
 
     @FindBy(css= "section.Carousel.relative")
@@ -26,7 +28,10 @@ public class WatchPage extends BasePage{
     @FindBy(css = "div.lightbox__closebtn__wrap")
     private WebElement closeLightBoxButton;
 
-
+    /**
+     * WatchPage constructor method
+     * @param driver web driver
+     */
     public WatchPage(WebDriver driver) {
         super(driver);
     }

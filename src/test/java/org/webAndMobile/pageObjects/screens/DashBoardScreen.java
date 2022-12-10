@@ -54,7 +54,7 @@ public class DashBoardScreen extends BaseScreen {
 
     /**
      * @author Hans.Marquez
-     * Navigate to Login Screen from DashBoard Screen.
+     * Navigate to Log in Screen from DashBoard Screen.
      */
     public MapScreen goToMapScreen() {
         dismissStartOptions();

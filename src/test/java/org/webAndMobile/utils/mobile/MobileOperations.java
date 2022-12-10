@@ -136,6 +136,13 @@ public abstract class MobileOperations {
         }
     }
 
+    /**
+     *Determines if a particular element is found in a list of elements
+     * @param list of android elements
+     * @param elementName android element name
+     * @return true if the element is in the list otherwise returns false
+     */
+
     public Boolean findAListElementName (List<AndroidElement> list, String elementName){
         List<Boolean> result = new ArrayList<>();
         list.forEach(element -> {
@@ -143,6 +150,13 @@ public abstract class MobileOperations {
         });
         return result.contains(true);
     }
+
+    /**
+     * Determines if some elements are found in a list of elements
+     * @param listElements list of android elements
+     * @param elementsToFind List of android elements
+     * @return true if the elements are in the list otherwise returns false
+     */
 
     public Boolean findSomeListElements(List<AndroidElement> listElements, List<String> elementsToFind){
         List<Boolean> result = new ArrayList<>();

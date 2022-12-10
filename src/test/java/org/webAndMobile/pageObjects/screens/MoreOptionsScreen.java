@@ -60,8 +60,8 @@ public class MoreOptionsScreen extends BaseScreen {
     }
 
     /**
+     * Click on privacy and Legal option
      * @author Joan.Zorovich
-     * @return true if there is a plans option list, otherwise false.
      */
     public void clickOnPrivacyAndLegal(){
         click(privacyAndLegalButton);
@@ -70,7 +70,6 @@ public class MoreOptionsScreen extends BaseScreen {
     /**
      *Swipe the screen until find the right element
      * @author Joan.Zorovich
-     * @return The screen where the privacy and legal button is displayed.
      */
     public void swipeUntilPrivacyAndLegalButton() {
         do {
