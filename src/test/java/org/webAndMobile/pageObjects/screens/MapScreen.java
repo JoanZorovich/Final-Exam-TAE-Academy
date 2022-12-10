@@ -60,8 +60,8 @@ public class MapScreen extends BaseScreen {
     }
 
     /**
+     * Display a menu with different categories
      * @author Joan.Zorovich
-     * @return display a menu with different categories
      */
     public void clickOnCategoriesButton() {
         categoryListButton.click();

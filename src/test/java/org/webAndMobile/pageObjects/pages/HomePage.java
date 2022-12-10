@@ -7,6 +7,9 @@ import org.openqa.selenium.support.FindBy;
 
 import java.time.Duration;
 
+/**
+ * Class that contains all the web elements and methods of the Home page
+ */
 public class HomePage extends BasePage {
 
     @FindBy(className = "main-content")
@@ -66,17 +69,35 @@ public class HomePage extends BasePage {
     @FindBy(css = "form.form-section.account-deleted-gating")
     private WebElement accountDeletedMessage;
 
+    /**
+     * HomePage constructor method
+     * @param driver web driver
+     */
 
     public HomePage(WebDriver driver) {
         super(driver);
     }
 
+    /**
+     * @author Joan.Zorovich
+     * @return true if the main content is displayed, otherwise false.
+     */
+
     public boolean isMainContentDisplayed(){
        return mainContent.isDisplayed();
     }
+
+    /**
+     * @author Joan.Zorovich
+     * @return true if the Score Board is displayed, otherwise false.
+     */
     public boolean isScoreBoardDisplayed(){
         return scoreBoard.isDisplayed();
     }
+    /**
+     * @author Joan.Zorovich
+     * @return true if the User Profile Logo is displayed, otherwise false.
+     */
     public boolean isUserProfileLogoDisplayed(){
         return userProfileLogo.isDisplayed();
     }

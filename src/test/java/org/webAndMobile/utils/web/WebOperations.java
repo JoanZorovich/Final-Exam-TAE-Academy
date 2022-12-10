@@ -74,11 +74,6 @@ public class WebOperations {
         wait.until(ExpectedConditions.presenceOfElementLocated(By.cssSelector(locator)));
     }
 
-    /*public void scrollDown(){
-        action
-                .scrollByAmount(0, 10000)
-                .perform();
-    }*/
 
     public Boolean isElementDisplayed(WebElement element, Integer intWait) {
         try {

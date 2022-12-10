@@ -10,10 +10,18 @@ import org.webAndMobile.utils.mobile.MobileDriver;
 
 import java.net.MalformedURLException;
 import java.net.URL;
+/**
+ * Mobile automation hooks class
+ */
 
 public class MobileHooks {
 
     public static MobileDriver driver;
+    /**
+     * SetUp before to run suite of test.
+     *
+     * @author Arley.Bolivar
+     */
 
     @Before
     public void environmentSetUp() {
@@ -27,12 +35,22 @@ public class MobileHooks {
             exception.printStackTrace();
         }
     }
-
+    /**
+     * Close the application after completing the test.
+     *
+     * @author Arley.Bolivar
+     */
     @After
     public void tearDown() {
         driver.getDriver().quit();
     }
 
+    /**
+     * return the driver.
+     *
+     * @return driver
+     * @author Arley.Bolivar
+     */
 
     public static AndroidDriver<AndroidElement> getDriver() {
         return driver.getDriver();
