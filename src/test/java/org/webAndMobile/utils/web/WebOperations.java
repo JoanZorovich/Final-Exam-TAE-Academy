@@ -19,7 +19,7 @@ public class WebOperations {
 
     public WebOperations(WebDriver driver) {
         this.driver = driver;
-        this.wait = new WebDriverWait(driver, Duration.ofSeconds(7L));
+        this.wait = new WebDriverWait(driver, 7L);
         this.action = new Actions(driver);
         initElements(driver, this);
     }
@@ -69,16 +69,16 @@ public class WebOperations {
         driver.navigate().back();
     }
 
-    public void waitForElementPresence(String locator, Duration timeout) {
+    public void waitForElementPresence(String locator, long timeout) {
         WebDriverWait wait = new WebDriverWait(driver, timeout);
         wait.until(ExpectedConditions.presenceOfElementLocated(By.cssSelector(locator)));
     }
 
-    public void scrollDown(){
+    /*public void scrollDown(){
         action
                 .scrollByAmount(0, 10000)
                 .perform();
-    }
+    }*/
 
     public Boolean isElementDisplayed(WebElement element, Integer intWait) {
         try {
@@ -90,7 +90,7 @@ public class WebOperations {
     }
 
     private WebDriverWait getWait(Integer intWait) {
-        return new WebDriverWait(driver, Duration.ofSeconds(intWait));
+        return new WebDriverWait(driver, intWait);
     }
 
 }

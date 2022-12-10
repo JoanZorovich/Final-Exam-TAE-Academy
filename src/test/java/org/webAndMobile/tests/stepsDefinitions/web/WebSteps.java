@@ -1,4 +1,4 @@
-package org.webAndMobile.tests.stepsDefinitions;
+package org.webAndMobile.tests.stepsDefinitions.web;
 
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
@@ -7,6 +7,7 @@ import io.cucumber.java.en.When;
 import org.testng.Assert;
 import org.webAndMobile.pageObjects.pages.HomePage;
 import org.webAndMobile.pageObjects.pages.WatchPage;
+import org.webAndMobile.tests.stepsDefinitions.web.WebHooks;
 import org.webAndMobile.utils.reporting.Reporter;
 
 public class WebSteps {
@@ -59,7 +60,6 @@ public class WebSteps {
         Assert.assertTrue(home.isCloseButtonDisplayed(), "Close Button is not displayed");
 
         home.typeSignUpInfo(firstName,lastName,email,password);
-        home.scrollDown();
         home.clickOnSubmitButton();
     }
 
