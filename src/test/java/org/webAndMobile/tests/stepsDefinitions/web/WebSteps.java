@@ -18,6 +18,8 @@ public class WebSteps {
     private final String USER_NAME = "Joan!";
     private final String WELCOME_MESSAGE = "Welcome!";
 
+    private static String EMAIL;
+
     @Given("User is on the ESPN home page")
     public void userIsOnTheESPNHomePage() {
         home = new HomePage(WebHooks.getDriver());
@@ -27,8 +29,8 @@ public class WebSteps {
         Assert.assertTrue(home.isNavbarDisplayed(), "Navbar is not displayed");
     }
 
-    @When("User sign up successfully {string} {string} {string} {string}")
-    public void userSignUpSuccessfully(String firstName, String lastName, String email, String password) {
+    @When("User sign up successfully {string} {string} {string}")
+    public void userSignUpSuccessfully(String firstName, String lastName, String password) {
         home.placeMouseOverProfileLogo();
         Reporter.info("Validate profile Menu is displayed");
         Assert.assertTrue(home.isMainContentDisplayed(), "profile Menu is not displayed");
@@ -58,8 +60,8 @@ public class WebSteps {
         Assert.assertTrue(home.isSubmitButtonDisplayed(), "Sign Up Button is not displayed");
         Reporter.info("Close Button is displayed");
         Assert.assertTrue(home.isCloseButtonDisplayed(), "Close Button is not displayed");
-
-        home.typeSignUpInfo(firstName,lastName,email,password);
+        EMAIL = home.getRandomEmail();
+        home.typeSignUpInfo(firstName,lastName,EMAIL,password);
         home.clickOnSubmitButton();
     }
 

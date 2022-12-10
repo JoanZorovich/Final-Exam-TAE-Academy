@@ -161,6 +161,12 @@ public class HomePage extends BasePage {
         super.placeMouseOverElement(userProfileLogo);
         return welcomeMessage.getText();
     }
+
+    public String getRandomEmail() {
+        int randomValue = (int)(Math.random() * 1000);
+        return  "test" + randomValue + "@joantest.com";
+    }
+
     public void doLogin(String email, String password){
         placeMouseOverProfileLogo();
         clickOnLoginLink();

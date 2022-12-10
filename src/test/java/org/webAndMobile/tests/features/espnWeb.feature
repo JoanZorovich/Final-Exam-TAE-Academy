@@ -7,11 +7,11 @@ Feature: ESPN web navigation
   @webNavigation
   Scenario Outline: As a user, I can navigate from the home page to the watch page
     Given User is on the ESPN home page
-    When User sign up successfully <firstname> <lastname> <email> <password>
+    When User sign up successfully <firstname> <lastname> <password>
     Then Watch page should displays different carousels
     And User returns to home page
     And User logs out from session
 
     Examples:
-      | firstname | lastname   | email                      | password   |
-      | "Joan"   | "Zorovich"  | "prueba1234@prueba131.com" | "P12345678#" |
+      | firstname | lastname   | password     |
+      | "Joan"   | "Zorovich"  | "P12345678#" |
