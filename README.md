@@ -5,7 +5,7 @@ regarding web and mobile:
 
 - Web Module:
 Based on the ESPN webpage Web Browser URL: https://www.espnqa.com/?src=com&_adblock=true&espn=cloud. Create automated test cases for the
-following scenarios.
+following scenario.
 
 1. Sign Up
 2. Watch Page
